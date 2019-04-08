@@ -1,8 +1,14 @@
 <template>
 	<div>
-		<AddressDisplay :address="address"/>
-		<AddressQRCode :address="address"/>
-		<AddressCopyButton :address="address"/>
+		<div v-if="!addressIsValid">
+			Invalid address
+		</div>
+
+		<div v-if="addressIsValid">
+			<AddressDisplay :address="address"/>
+			<AddressQRCode :address="address"/>
+			<AddressCopyButton :address="address"/>
+		</div>
 	</div>
 </template>
 
@@ -21,6 +27,9 @@ export default {
 	computed: {
 		address() {
 			return this.$route.params.address;
+		},
+		addressIsValid() {
+			return /^((nano)|(xrb))_[13456789abcdefghijkmnopqrstuwxyz]{60}$/.test(this.address);
 		},
 	},
 };

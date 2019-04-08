@@ -1,5 +1,5 @@
 <template>
-	<div>{{ address }}</div>
+	<div class="address-display">{{ address }}</div>
 </template>
 
 <script>
@@ -15,5 +15,9 @@ export default {
 </script>
 
 <style scoped>
-
+.address-display {
+	word-break: break-all;
+	font-family: monospace;
+	padding: 1.5rem;
+}
 </style>

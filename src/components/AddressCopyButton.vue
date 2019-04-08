@@ -1,5 +1,11 @@
 <template>
-	<button @click="copy">Copy Address</button>
+	<div class="address-copy-button">
+		<button
+			class="button"
+			@click="copy"
+			v-text="'Copy Address'"
+		/>
+	</div>
 </template>
 
 <script>
@@ -22,5 +28,18 @@ export default {
 </script>
 
 <style scoped>
+.address-copy-button {
+	padding: 1.5rem;
+}
 
+.button {
+	padding: .75rem 1.5rem;
+	background-color: black;
+	color: white;
+	width: 100%;
+	border-radius: .5rem;
+	font-weight: 700;
+	letter-spacing: .03125rem;
+	cursor: pointer;
+}
 </style>

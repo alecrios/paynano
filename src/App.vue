@@ -1,61 +1,23 @@
 <template>
-	<RouterView/>
+	<div id="app">
+		<RouterView/>
+	</div>
 </template>
 
 <script>
-import 'core-reset/core-reset.css';
-
 export default {
 	name: 'App',
 };
 </script>
 
 <style>
-@font-face {
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 300;
-	src:
-		local('Nunito Light'),
-		local('Nunito-Light'),
-		url('./assets/fonts/nunito-v10-latin-300.woff2') format('woff2'),
-		url('./assets/fonts/nunito-v10-latin-300.woff') format('woff');
-}
+@import '~core-reset/core-reset.css';
+@import 'styles/colors.css';
+@import 'styles/fonts.css';
+@import 'styles/global.css';
 
-@font-face {
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 400;
-	src:
-		local('Nunito Regular'),
-		local('Nunito-Regular'),
-		url('./assets/fonts/nunito-v10-latin-regular.woff2') format('woff2'),
-		url('./assets/fonts/nunito-v10-latin-regular.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 600;
-	src:
-		local('Nunito SemiBold'),
-		local('Nunito-SemiBold'),
-		url('./assets/fonts/nunito-v10-latin-600.woff2') format('woff2'),
-		url('./assets/fonts/nunito-v10-latin-600.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 700;
-	src:
-		local('Nunito Bold'),
-		local('Nunito-Bold'),
-		url('./assets/fonts/nunito-v10-latin-700.woff2') format('woff2'),
-		url('./assets/fonts/nunito-v10-latin-700.woff') format('woff');
-}
-
-html {
-	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+#app {
+	max-width: 20rem;
+	margin: 0 auto;
 }
 </style>

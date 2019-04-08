@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "core-reset": "^4.0.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"
   },

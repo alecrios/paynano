@@ -1,31 +1,61 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<RouterView/>
 </template>
 
+<script>
+import 'core-reset/core-reset.css';
+
+export default {
+	name: 'App',
+};
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		local('Nunito Light'),
+		local('Nunito-Light'),
+		url('./assets/fonts/nunito-v10-latin-300.woff2') format('woff2'),
+		url('./assets/fonts/nunito-v10-latin-300.woff') format('woff');
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('Nunito Regular'),
+		local('Nunito-Regular'),
+		url('./assets/fonts/nunito-v10-latin-regular.woff2') format('woff2'),
+		url('./assets/fonts/nunito-v10-latin-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 600;
+	src:
+		local('Nunito SemiBold'),
+		local('Nunito-SemiBold'),
+		url('./assets/fonts/nunito-v10-latin-600.woff2') format('woff2'),
+		url('./assets/fonts/nunito-v10-latin-600.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		local('Nunito Bold'),
+		local('Nunito-Bold'),
+		url('./assets/fonts/nunito-v10-latin-700.woff2') format('woff2'),
+		url('./assets/fonts/nunito-v10-latin-700.woff') format('woff');
+}
+
+html {
+	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 </style>

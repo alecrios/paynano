@@ -1,22 +1,22 @@
 <template>
 	<div>
 		<AddressDisplay :address="address"/>
-		<QRCode :address="address"/>
-		<CopyAddressButton :address="address"/>
+		<AddressQRCode :address="address"/>
+		<AddressCopyButton :address="address"/>
 	</div>
 </template>
 
 <script>
 import AddressDisplay from '@/components/AddressDisplay.vue';
-import QRCode from '@/components/QRCode.vue';
-import CopyAddressButton from '@/components/CopyAddressButton.vue';
+import AddressQRCode from '@/components/AddressQRCode.vue';
+import AddressCopyButton from '@/components/AddressCopyButton.vue';
 
 export default {
 	name: 'Address',
 	components: {
 		AddressDisplay,
-		QRCode,
-		CopyAddressButton,
+		AddressQRCode,
+		AddressCopyButton,
 	},
 	computed: {
 		address() {

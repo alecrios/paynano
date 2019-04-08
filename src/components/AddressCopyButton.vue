@@ -6,7 +6,7 @@
 import copy from 'copy-to-clipboard';
 
 export default {
-	name: 'CopyAddressButton',
+	name: 'AddressCopyButton',
 	props: {
 		address: {
 			type: String,

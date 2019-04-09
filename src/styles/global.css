@@ -1,3 +1,15 @@
 html {
 	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	background-color: hsla(225, 6.25%, 93.75%, 1);
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+.js-focus-visible :focus {
+	outline: none;
+	box-shadow: var(--box-shadow-focus);
+}
+.js-focus-visible :focus:not([data-focus-visible-added]) {
+	box-shadow: none;
 }

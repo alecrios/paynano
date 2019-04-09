@@ -15,16 +15,11 @@ export default {
 	},
 	data() {
 		return {
-			svg: null,
+			svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"></svg>',
 		};
 	},
-	methods: {
-		async getSvg() {
-			this.svg = await QRCode.toString(this.address, {type: 'svg'});
-		},
-	},
-	created() {
-		this.getSvg();
+	async created() {
+		this.svg = await QRCode.toString(this.address, {type: 'svg'});
 	},
 };
 </script>

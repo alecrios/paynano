@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import 'focus-visible';
+
 export default {
 	name: 'App',
 };
@@ -19,5 +21,6 @@ export default {
 #app {
 	max-width: 20rem;
 	margin: 0 auto;
+	padding: 1.5rem;
 }
 </style>

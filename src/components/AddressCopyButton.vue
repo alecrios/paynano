@@ -34,12 +34,17 @@ export default {
 
 .button {
 	padding: .75rem 1.5rem;
-	background-color: black;
+	background-color: hsl(212, 72%, 59%);
 	color: white;
 	width: 100%;
-	border-radius: .5rem;
-	font-weight: 700;
+	border-radius: .25rem;
+	font-weight: 600;
 	letter-spacing: .03125rem;
 	cursor: pointer;
+	transition: background-color 125ms ease;
+}
+
+.button:hover {
+	background-color: hsl(212, 72%, 51%);
 }
 </style>

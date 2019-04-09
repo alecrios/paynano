@@ -1,0 +1,5 @@
+:root {
+	--color-text: hsla(212, 6.25%, 25%, 1);
+
+	--box-shadow-focus: 0 0 0 .1875rem hsla(212, 72%, 75%, .5);
+}

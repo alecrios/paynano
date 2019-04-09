@@ -18,6 +18,11 @@ export default {
 .address-display {
 	word-break: break-all;
 	font-family: monospace;
-	padding: 1.5rem;
+	padding: 0 1.5rem;
+	font-family: 'Roboto Mono';
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: var(--color-text);
 }
 </style>

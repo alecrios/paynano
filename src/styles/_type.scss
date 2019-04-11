@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Roboto+Mono:700');
+
+@mixin button() {
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-weight: 500;
+	padding: .75rem 1.5rem;
+	background-color: $color-primary;
+	color: $color-base;
+	width: 100%;
+	border-radius: .25rem;
+	cursor: pointer;
+	transition: background-color 125ms ease;
+
+	&:hover {
+		background-color: $color-primary-hover;
+	}
+
+	&:active {
+		background-color: $color-primary;
+	}
+
+	&.secondary {
+		background-color: red;
+	}
+}

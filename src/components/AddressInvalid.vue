@@ -10,13 +10,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .address-invalid {
 	padding: 1.5rem;
 	text-align: center;
 	font-size: 1rem;
 	line-height: 1.5rem;
-	font-weight: 400;
-	color: var(--color-text);
+	color: $color-text;
 }
 </style>

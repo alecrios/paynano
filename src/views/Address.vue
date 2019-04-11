@@ -5,7 +5,7 @@
 		<div v-if="addressIsValid">
 			<AddressQRCode :address="address"/>
 			<AddressDisplay :address="address"/>
-			<AddressCopyButton :address="address"/>
+			<AddressOpenButton :address="address"/>
 		</div>
 	</div>
 </template>
@@ -14,7 +14,8 @@
 import AddressInvalid from '@/components/AddressInvalid.vue';
 import AddressDisplay from '@/components/AddressDisplay.vue';
 import AddressQRCode from '@/components/AddressQRCode.vue';
-import AddressCopyButton from '@/components/AddressCopyButton.vue';
+import AddressOpenButton from '@/components/AddressOpenButton.vue';
+import addressIsValid from '@/utils/addressIsValid';
 
 export default {
 	name: 'Address',
@@ -22,24 +23,24 @@ export default {
 		AddressInvalid,
 		AddressDisplay,
 		AddressQRCode,
-		AddressCopyButton,
+		AddressOpenButton,
 	},
 	computed: {
 		address() {
 			return this.$route.params.address;
 		},
-		addressIsValid() {
-			return /^((nano)|(xrb))_[13456789abcdefghijkmnopqrstuwxyz]{60}$/.test(this.address);
-		},
+	},
+	methods: {
+		addressIsValid,
 	},
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .address {
 	border-radius: .5rem;
 	overflow: hidden;
-	background-color: hsla(225, 6.25%, 100%, 1);
+	background-color: $color-base;
 	box-shadow: 0 .75rem 1.5rem 0 hsla(225, 6.25%, 0%, .125);
 }
 </style>

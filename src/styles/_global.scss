@@ -1,5 +1,5 @@
 html {
-	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 ::-moz-focus-inner {
@@ -7,7 +7,7 @@ html {
 }
 .js-focus-visible :focus {
 	outline: none;
-	box-shadow: var(--box-shadow-focus);
+	box-shadow: $box-shadow-focus;
 }
 .js-focus-visible :focus:not([data-focus-visible-added]) {
 	box-shadow: none;

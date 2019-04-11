@@ -1,26 +1,29 @@
 <template>
 	<div id="app">
 		<RouterView/>
+		<TheNotifications/>
 	</div>
 </template>
 
 <script>
 import 'focus-visible';
+import TheNotifications from '@/components/TheNotifications.vue';
 
 export default {
 	name: 'App',
+	components: {
+		TheNotifications,
+	},
 };
 </script>
 
-<style>
+<style lang="scss">
 @import '~core-reset/core-reset.css';
-@import 'styles/colors.css';
-@import 'styles/fonts.css';
-@import 'styles/global.css';
 
 #app {
+	width: 100%;
 	max-width: 20rem;
 	margin: 0 auto;
-	padding: 1.5rem;
+	padding: 3rem 1.5rem;
 }
 </style>

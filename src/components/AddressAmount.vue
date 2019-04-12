@@ -6,7 +6,7 @@
 
 		<div
 			class="amount"
-			v-text="amount"
+			v-text="`${amount} NANO`"
 			title="Click to copy"
 			@click="copy"
 		/>

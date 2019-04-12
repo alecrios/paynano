@@ -31,6 +31,7 @@ export default {
 
 .main {
 	border-radius: .5rem;
+	overflow: hidden;
 	background-color: $color-base;
 	box-shadow: $box-shadow-large;
 }

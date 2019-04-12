@@ -1,5 +1,6 @@
 html {
 	@include font-stack-sans-serif;
+	background-color: $color-gray;
 }
 
 ::-moz-focus-inner {

@@ -7,12 +7,12 @@
 					text="Nano Address"
 				/>
 
-				<BaseTextarea
+				<BaseInput
 					id="address"
+					type="text"
 					placeholder="nano_"
-					v-model.trim="address"
 					spellcheck="false"
-					@keydown.native.enter.prevent="submit"
+					v-model.trim="address"
 				/>
 			</div>
 

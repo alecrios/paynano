@@ -31,7 +31,6 @@ export default {
 
 .main {
 	border-radius: .5rem;
-	overflow: hidden;
 	background-color: $color-base;
 	box-shadow: 0 .75rem 1.5rem 0 hsla(225, 6.25%, 0%, .125);
 }

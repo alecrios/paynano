@@ -43,17 +43,4 @@ export default {
 .message.success {
 	background-color: $color-success;
 }
-
-.message::before {
-	color: $color-base;
-	margin-right: .25rem;
-}
-
-.message.error::before {
-	content: '\2718';
-}
-
-.message.success::before {
-	content: '\2714';
-}
 </style>

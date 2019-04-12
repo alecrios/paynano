@@ -1,23 +1,45 @@
 <template>
 	<div class="home">
 		<form @submit.prevent="submit">
-			<BaseLabel
-				input-id="address"
-				text="Nano Address"
-			/>
+			<div class="field">
+				<BaseLabel
+					input-id="address"
+					text="Nano Address"
+				/>
 
-			<BaseTextarea
-				id="address"
-				placeholder="nano_"
-				v-model.trim="address"
-				spellcheck="false"
-				@keydown.native.enter.prevent="submit"
-			/>
+				<BaseTextarea
+					id="address"
+					placeholder="nano_"
+					v-model.trim="address"
+					spellcheck="false"
+					@keydown.native.enter.prevent="submit"
+				/>
+			</div>
 
-			<BaseButton
-				text="Submit"
-				@click="submit"
-			/>
+			<div class="field">
+				<BaseLabel
+					input-id="amount"
+					text="Amount"
+					note="Optional"
+				/>
+
+				<BaseInput
+					id="amount"
+					type="number"
+					placeholder="0"
+					step=".01"
+					min="0"
+					autocomplete="off"
+					v-model.trim="amount"
+				/>
+			</div>
+
+			<div class="field">
+				<BaseButton
+					text="Get Link"
+					@click="submit"
+				/>
+			</div>
 		</form>
 	</div>
 </template>
@@ -25,12 +47,14 @@
 <script>
 import copy from 'copy-to-clipboard';
 import addressIsValid from '@/utils/addressIsValid';
+import amountIsValid from '@/utils/amountIsValid';
 
 export default {
 	name: 'Home',
 	data() {
 		return {
 			address: '',
+			amount: '',
 		};
 	},
 	methods: {
@@ -40,7 +64,17 @@ export default {
 				return;
 			}
 
-			const route = `/${this.address}`;
+			let route = `/${this.address}`;
+
+			if (this.amount) {
+				if (!amountIsValid(this.amount)) {
+					this.$notify({type: 'error', text: 'Amount is invalid'});
+					return;
+				}
+
+				route += `?amount=${this.amount}`;
+			}
+
 			this.$router.push(route);
 			copy(`${window.location.origin}${route}`);
 			this.$notify({type: 'success', text: 'Copied link to clipboard'});
@@ -50,5 +84,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home {
+	padding: 1.5rem;
+}
 
+.field + .field {
+	margin-top: 1.5rem;
+}
 </style>

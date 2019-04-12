@@ -1,14 +1,8 @@
 <template>
-	<div
-		class="address-qr-code"
-		title="Click to copy"
-		v-html="svg"
-		@click="copyAddress"
-	/>
+	<div v-html="svg"/>
 </template>
 
 <script>
-import copy from 'copy-to-clipboard';
 import QRCode from 'qrcode';
 
 export default {
@@ -18,26 +12,22 @@ export default {
 			type: String,
 			required: true,
 		},
+		deepLink: {
+			type: String,
+			required: true,
+		},
 	},
 	data() {
 		return {
 			svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"></svg>',
 		};
 	},
-	methods: {
-		copyAddress() {
-			copy(this.address);
-			this.$notify({type: 'success', text: 'Copied address to clipboard'});
-		},
-	},
 	async created() {
-		this.svg = await QRCode.toString(this.address, {type: 'svg'});
+		this.svg = await QRCode.toString(this.deepLink, {type: 'svg'});
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-.address-qr-code {
-	cursor: pointer;
-}
+
 </style>

@@ -1,11 +1,19 @@
 <template>
 	<div
 		class="address-display"
-		v-text="address"
-	/>
+	>
+		<span
+			class="address"
+			v-text="address"
+			title="Click to copy"
+			@click="copy"
+		/>
+	</div>
 </template>
 
 <script>
+import copy from 'copy-to-clipboard';
+
 export default {
 	name: 'AddressDisplay',
 	props: {
@@ -14,17 +22,31 @@ export default {
 			required: true,
 		},
 	},
+	methods: {
+		copy() {
+			copy(this.address);
+			this.$notify({type: 'success', text: 'Copied address to clipboard'});
+		},
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 .address-display {
-	word-break: break-all;
-	padding: 0 1.5rem;
-	font-family: 'Roboto Mono';
-	font-weight: 700;
-	font-size: 1rem;
-	line-height: 1.5rem;
-	color: $color-text;
+	padding: 1rem 1.5rem;
+
+	.address {
+		@include font-stack-monospace;
+		word-break: break-all;
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: $color-text;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 </style>

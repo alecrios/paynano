@@ -1,11 +1,15 @@
 <template>
 	<div id="app">
-		<RouterView/>
+		<main class="main">
+			<RouterView/>
+		</main>
+
 		<TheNotifications/>
 	</div>
 </template>
 
 <script>
+import 'core-reset/core-reset.css';
 import 'focus-visible';
 import TheNotifications from '@/components/TheNotifications.vue';
 
@@ -18,12 +22,17 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~core-reset/core-reset.css';
-
 #app {
 	width: 100%;
 	max-width: 20rem;
 	margin: 0 auto;
 	padding: 3rem 1.5rem;
+}
+
+.main {
+	border-radius: .5rem;
+	overflow: hidden;
+	background-color: $color-base;
+	box-shadow: 0 .75rem 1.5rem 0 hsla(225, 6.25%, 0%, .125);
 }
 </style>

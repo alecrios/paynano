@@ -2,8 +2,10 @@
 	<label
 		class="label"
 		:for="inputId"
-		v-text="text"
-	/>
+	>
+		<span>{{ text }}</span>
+		<span class="note" v-if="note">({{ note }})</span>
+	</label>
 </template>
 
 <script>
@@ -18,6 +20,10 @@ export default {
 			type: String,
 			required: true,
 		},
+		note: {
+			type: String,
+			default: '',
+		},
 	},
 };
 </script>
@@ -30,5 +36,12 @@ export default {
 	font-weight: 700;
 	color: $color-text;
 	margin-bottom: .5rem;
+
+	> .note {
+		color: $color-text-lighter;
+		font-size: .75rem;
+		font-weight: 500;
+		margin-left: .5rem;
+	}
 }
 </style>

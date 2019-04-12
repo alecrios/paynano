@@ -2,10 +2,11 @@
 	<div class="address">
 		<AddressInvalid v-if="!addressIsValid"/>
 
-		<div v-if="addressIsValid">
-			<AddressQRCode :address="address"/>
+		<div class="sections" v-if="addressIsValid">
+			<AddressQRCode :address="address" :deep-link="deepLink"/>
 			<AddressDisplay :address="address"/>
-			<AddressOpenButton :address="address"/>
+			<AddressAmount v-if="amount" :amount="amount"/>
+			<AddressOpenButton :deep-link="deepLink"/>
 		</div>
 	</div>
 </template>
@@ -13,15 +14,18 @@
 <script>
 import AddressInvalid from '@/components/AddressInvalid.vue';
 import AddressDisplay from '@/components/AddressDisplay.vue';
+import AddressAmount from '@/components/AddressAmount.vue';
 import AddressQRCode from '@/components/AddressQRCode.vue';
 import AddressOpenButton from '@/components/AddressOpenButton.vue';
 import addressIsValid from '@/utils/addressIsValid';
+import getRawAmount from '@/utils/getRawAmount';
 
 export default {
 	name: 'Address',
 	components: {
 		AddressInvalid,
 		AddressDisplay,
+		AddressAmount,
 		AddressQRCode,
 		AddressOpenButton,
 	},
@@ -29,18 +33,33 @@ export default {
 		address() {
 			return this.$route.params.address;
 		},
-	},
-	methods: {
-		addressIsValid,
+		addressIsValid() {
+			return addressIsValid(this.address);
+		},
+		amount() {
+			if (!this.$route.query) {
+				return null;
+			}
+
+			return this.$route.query.amount;
+		},
+		deepLink() {
+			let deepLink = `nano:${this.address}`;
+
+			if (this.amount) {
+				deepLink += `?amount=${getRawAmount(this.amount)}`;
+			}
+
+			return deepLink;
+		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
 .address {
-	border-radius: .5rem;
-	overflow: hidden;
-	background-color: $color-base;
-	box-shadow: 0 .75rem 1.5rem 0 hsla(225, 6.25%, 0%, .125);
+	.sections > * + * {
+		border-top: .125rem dashed $color-gray;
+	}
 }
 </style>

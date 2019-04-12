@@ -1,5 +1,5 @@
 html {
-	font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	@include font-stack-sans-serif;
 }
 
 ::-moz-focus-inner {

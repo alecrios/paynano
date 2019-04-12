@@ -12,14 +12,9 @@
 export default {
 	name: 'AddressOpenButton',
 	props: {
-		address: {
+		deepLink: {
 			type: String,
 			required: true,
-		},
-	},
-	computed: {
-		deepLink() {
-			return `nano:${this.address}`;
 		},
 	},
 };

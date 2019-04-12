@@ -1,6 +1,6 @@
 <template>
 	<div class="address-invalid">
-		<p>Sorry, this URL does not contain a valid Nano address.</p>
+		<p>Sorry, this URL does not contain a valid address.</p>
 	</div>
 </template>
 

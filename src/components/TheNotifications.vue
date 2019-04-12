@@ -31,6 +31,7 @@ export default {
 	display: flex;
 	font-size: .75rem;
 	line-height: 1rem;
+	font-weight: 500;
 	color: $color-base;
 	padding: .5rem .75rem;
 	border-radius: .25rem;

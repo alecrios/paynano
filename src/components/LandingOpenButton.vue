@@ -1,5 +1,5 @@
 <template>
-	<div class="address-open-button">
+	<div class="landing-open-button">
 		<a
 			class="button"
 			v-text="'Open in Wallet'"
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	name: 'AddressOpenButton',
+	name: 'LandingOpenButton',
 	props: {
 		deepLink: {
 			type: String,
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.address-open-button {
+.landing-open-button {
 	padding: 1.5rem;
 }
 

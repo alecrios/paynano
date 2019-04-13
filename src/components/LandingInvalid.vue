@@ -1,17 +1,17 @@
 <template>
-	<div class="address-invalid">
+	<div class="landing-invalid">
 		<p>Sorry, this URL does not contain a valid address.</p>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'AddressInvalid',
+	name: 'LandingInvalid',
 };
 </script>
 
 <style lang="scss" scoped>
-.address-invalid {
+.landing-invalid {
 	padding: 1.5rem;
 	text-align: center;
 	font-size: 1rem;

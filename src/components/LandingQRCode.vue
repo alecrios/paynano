@@ -6,7 +6,7 @@
 import QRCode from 'qrcode';
 
 export default {
-	name: 'AddressQRCode',
+	name: 'LandingQRCode',
 	props: {
 		address: {
 			type: String,

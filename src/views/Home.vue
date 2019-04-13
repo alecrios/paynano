@@ -86,9 +86,9 @@ export default {
 <style lang="scss" scoped>
 .home {
 	padding: 1.5rem;
-}
 
-.field + .field {
-	margin-top: 1.5rem;
+	.field + .field {
+		margin-top: 1.5rem;
+	}
 }
 </style>

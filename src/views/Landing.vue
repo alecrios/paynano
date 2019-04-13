@@ -1,33 +1,33 @@
 <template>
-	<div class="address">
-		<AddressInvalid v-if="!addressIsValid"/>
+	<div class="landing">
+		<LandingInvalid v-if="!addressIsValid"/>
 
 		<div class="sections" v-if="addressIsValid">
-			<AddressQRCode :address="address" :deep-link="deepLink"/>
-			<AddressDisplay :address="address"/>
-			<AddressAmount v-if="amount" :amount="amount"/>
-			<AddressOpenButton :deep-link="deepLink"/>
+			<LandingQRCode :address="address" :deep-link="deepLink"/>
+			<LandingAddress :address="address"/>
+			<LandingAmount v-if="amount" :amount="amount"/>
+			<LandingOpenButton :deep-link="deepLink"/>
 		</div>
 	</div>
 </template>
 
 <script>
-import AddressInvalid from '@/components/AddressInvalid.vue';
-import AddressDisplay from '@/components/AddressDisplay.vue';
-import AddressAmount from '@/components/AddressAmount.vue';
-import AddressQRCode from '@/components/AddressQRCode.vue';
-import AddressOpenButton from '@/components/AddressOpenButton.vue';
+import LandingInvalid from '@/components/LandingInvalid.vue';
+import LandingAddress from '@/components/LandingAddress.vue';
+import LandingAmount from '@/components/LandingAmount.vue';
+import LandingQRCode from '@/components/LandingQRCode.vue';
+import LandingOpenButton from '@/components/LandingOpenButton.vue';
 import addressIsValid from '@/utils/addressIsValid';
 import getRawAmount from '@/utils/getRawAmount';
 
 export default {
-	name: 'Address',
+	name: 'Landing',
 	components: {
-		AddressInvalid,
-		AddressDisplay,
-		AddressAmount,
-		AddressQRCode,
-		AddressOpenButton,
+		LandingInvalid,
+		LandingAddress,
+		LandingAmount,
+		LandingQRCode,
+		LandingOpenButton,
 	},
 	computed: {
 		address() {
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.address {
+.landing {
 	.sections > * + * {
 		border-top: .125rem dashed $color-gray;
 	}

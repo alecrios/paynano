@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="address-amount"
+		class="landing-amount"
 	>
 		<div class="label">Amount:</div>
 
@@ -17,7 +17,7 @@
 import copy from 'copy-to-clipboard';
 
 export default {
-	name: 'AddressAmount',
+	name: 'LandingAmount',
 	props: {
 		amount: {
 			type: String,
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.address-amount {
+.landing-amount {
 	@include font-stack-monospace;
 	display: flex;
 	justify-content: space-between;

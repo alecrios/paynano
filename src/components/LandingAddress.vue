@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="address-display"
+		class="landing-address"
 	>
 		<span
 			class="address"
@@ -15,7 +15,7 @@
 import copy from 'copy-to-clipboard';
 
 export default {
-	name: 'AddressDisplay',
+	name: 'LandingAddress',
 	props: {
 		address: {
 			type: String,
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.address-display {
+.landing-address {
 	padding: 1rem 1.5rem;
 
 	.address {

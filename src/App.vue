@@ -4,6 +4,8 @@
 			<RouterView/>
 		</main>
 
+		<TheFooter/>
+
 		<TheNotifications/>
 	</div>
 </template>
@@ -11,11 +13,13 @@
 <script>
 import 'core-reset/core-reset.css';
 import 'focus-visible';
+import TheFooter from '@/components/TheFooter.vue';
 import TheNotifications from '@/components/TheNotifications.vue';
 
 export default {
 	name: 'App',
 	components: {
+		TheFooter,
 		TheNotifications,
 	},
 };

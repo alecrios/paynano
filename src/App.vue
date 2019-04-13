@@ -27,6 +27,10 @@ export default {
 
 <style lang="scss">
 #app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	width: 100%;
 	max-width: 20rem;
 	margin: 0 auto;

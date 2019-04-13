@@ -35,10 +35,9 @@ export default {
 .footer {
 	display: flex;
 	justify-content: center;
-	padding: .75rem;
+	margin-top: 1.5rem;
 
 	.link {
-		padding: .75rem;
 		font-size: .75rem;
 		line-height: 1.125rem;
 		font-weight: 500;
@@ -47,6 +46,10 @@ export default {
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	.link + .link {
+		margin-left: 1.5rem;
 	}
 }
 </style>

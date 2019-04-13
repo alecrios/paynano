@@ -19,7 +19,7 @@
 			<div class="field">
 				<BaseLabel
 					input-id="amount"
-					text="Amount"
+					text="Nano Amount"
 					note="Optional"
 				/>
 

@@ -45,6 +45,7 @@ export default {
 	padding: 1rem 1.5rem;
 
 	.amount {
+		text-align: right;
 		cursor: pointer;
 
 		&:hover {

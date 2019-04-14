@@ -11,7 +11,7 @@
 			href="https://nano.org/"
 			class="link"
 			target="_blank"
-			rel="_noopener"
+			rel="noopener"
 			v-text="'About Nano'"
 		/>
 
@@ -19,7 +19,7 @@
 			href="https://mynano.link/nano_3xk9wwjp89uod6gfwf775ctuibi4nybm4txi3gax3if1smun6hk57xxr6jnu"
 			class="link"
 			target="_blank"
-			rel="_noopener"
+			rel="noopener"
 			v-text="'Donate'"
 		/>
 	</footer>

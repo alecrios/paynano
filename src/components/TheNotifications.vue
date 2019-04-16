@@ -1,5 +1,5 @@
 <template>
-	<notifications position="top center" width="100%" :duration="2000">
+	<notifications position="top center" width="100%" :duration="2500">
 		<template slot="body" slot-scope="props">
 			<div class="notification">
 				<div :class="['message', props.item.type]">

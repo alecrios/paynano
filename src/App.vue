@@ -1,8 +1,6 @@
 <template>
 	<div id="app">
-		<main class="main">
-			<RouterView/>
-		</main>
+		<RouterView/>
 
 		<TheFooter/>
 
@@ -35,12 +33,5 @@ export default {
 	max-width: 20rem;
 	margin: 0 auto;
 	padding: 3rem 1.5rem;
-}
-
-.main {
-	border-radius: .5rem;
-	overflow: hidden;
-	background-color: $color-base;
-	box-shadow: $box-shadow-large;
 }
 </style>

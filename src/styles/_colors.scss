@@ -8,4 +8,6 @@ $color-success: #00A600;
 $color-error: #A60000;
 
 $box-shadow-focus: 0 0 0 .1875rem hsla(215, 100%, 50%, .5);
-$box-shadow-large: 0 .75rem 1.5rem 0 hsla(225, 6.25%, 0%, .125);
+$box-shadow-large:
+	0 1rem 1rem -1rem hsla(215, 12.5%, 12.5%, .125),
+	0 1rem 2rem 0 hsla(215, 0%, 25%, .0625);

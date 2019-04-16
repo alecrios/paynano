@@ -1,13 +1,15 @@
 <template>
 	<div class="landing">
-		<LandingInvalid v-if="!addressIsValid"/>
+		<BaseContainer class="container">
+			<LandingInvalid v-if="!addressIsValid"/>
 
-		<div class="sections" v-if="addressIsValid">
-			<LandingQRCode :address="address" :deep-link="deepLink"/>
-			<LandingAddress :address="address"/>
-			<LandingAmount v-if="amount" :amount="amount"/>
-			<LandingOpenButton :deep-link="deepLink"/>
-		</div>
+			<div class="sections" v-if="addressIsValid">
+				<LandingQRCode :address="address" :deep-link="deepLink"/>
+				<LandingAddress :address="address"/>
+				<LandingAmount v-if="amount" :amount="amount"/>
+				<LandingOpenButton :deep-link="deepLink"/>
+			</div>
+		</BaseContainer>
 	</div>
 </template>
 
@@ -59,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.landing {
+.container {
 	.sections > * + * {
 		border-top: .125rem dashed $color-gray;
 	}

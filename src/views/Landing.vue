@@ -20,7 +20,7 @@ import LandingAddress from '@/components/LandingAddress.vue';
 import LandingAmount from '@/components/LandingAmount.vue';
 import LandingQRCode from '@/components/LandingQRCode.vue';
 import LandingOpenButton from '@/components/LandingOpenButton.vue';
-import getRawAmount from '@/utils/getRawAmount';
+import {megaToRaw} from 'nano-unit-converter';
 
 const addressValidator = new NanoAddressValidator();
 
@@ -51,7 +51,7 @@ export default {
 			let deepLink = `nano:${this.address}`;
 
 			if (this.amount) {
-				deepLink += `?amount=${getRawAmount(this.amount)}`;
+				deepLink += `?amount=${megaToRaw(this.amount)}`;
 			}
 
 			return deepLink;

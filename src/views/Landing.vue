@@ -14,15 +14,13 @@
 </template>
 
 <script>
-import NanoAddressValidator from 'nano-address-validator';
+import isValid from 'nano-address-validator';
 import LandingInvalid from '@/components/LandingInvalid.vue';
 import LandingAddress from '@/components/LandingAddress.vue';
 import LandingAmount from '@/components/LandingAmount.vue';
 import LandingQRCode from '@/components/LandingQRCode.vue';
 import LandingOpenButton from '@/components/LandingOpenButton.vue';
 import {megaToRaw} from 'nano-unit-converter';
-
-const addressValidator = new NanoAddressValidator();
 
 export default {
 	name: 'Landing',
@@ -38,7 +36,7 @@ export default {
 			return this.$route.params.address;
 		},
 		addressIsValid() {
-			return addressValidator.isValid(this.address);
+			return isValid(this.address);
 		},
 		amount() {
 			if (!this.$route.query) {

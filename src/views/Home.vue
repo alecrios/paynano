@@ -64,10 +64,8 @@
 
 <script>
 import copy from 'copy-to-clipboard';
-import NanoAddressValidator from 'nano-address-validator';
+import isValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
-
-const addressValidator = new NanoAddressValidator();
 
 export default {
 	name: 'Home',
@@ -79,7 +77,7 @@ export default {
 	},
 	methods: {
 		submit() {
-			if (!addressValidator.isValid(this.address)) {
+			if (!isValid(this.address)) {
 				this.$notify({type: 'error', text: 'Address is invalid'});
 				return;
 			}

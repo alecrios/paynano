@@ -1,6 +1,9 @@
 <template>
 	<div class="landing-invalid">
-		<p>Sorry, this URL does not contain a valid address.</p>
+		<p>
+			Sorry, this URL does not contain a valid payment request.
+			Either the address or the amount is invalid.
+		</p>
 	</div>
 </template>
 

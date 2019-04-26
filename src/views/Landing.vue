@@ -1,9 +1,9 @@
 <template>
 	<div class="landing">
 		<BaseContainer class="container">
-			<LandingInvalid v-if="!addressIsValid"/>
+			<LandingInvalid v-if="!addressIsValid || !amountIsValid"/>
 
-			<div class="sections" v-if="addressIsValid">
+			<div class="sections" v-if="addressIsValid && amountIsValid">
 				<LandingQRCode :address="address" :deep-link="deepLink"/>
 				<LandingAddress :address="address"/>
 				<LandingAmount v-if="amount" :amount="amount"/>
@@ -14,13 +14,15 @@
 </template>
 
 <script>
-import isValid from 'nano-address-validator';
+import addressIsValid from 'nano-address-validator';
+import {megaToRaw} from 'nano-unit-converter';
+import {getSendURI} from 'nano-uri-generator';
 import LandingInvalid from '@/components/LandingInvalid.vue';
 import LandingAddress from '@/components/LandingAddress.vue';
 import LandingAmount from '@/components/LandingAmount.vue';
 import LandingQRCode from '@/components/LandingQRCode.vue';
 import LandingOpenButton from '@/components/LandingOpenButton.vue';
-import {megaToRaw} from 'nano-unit-converter';
+import amountIsValid from '@/utils/amountIsValid';
 
 export default {
 	name: 'Landing',
@@ -35,24 +37,26 @@ export default {
 		address() {
 			return this.$route.params.address;
 		},
-		addressIsValid() {
-			return isValid(this.address);
-		},
 		amount() {
-			if (!this.$route.query) {
-				return null;
+			if (this.$route.query === undefined) {
+				return undefined;
+			}
+
+			if (this.$route.query.amount === undefined) {
+				return undefined;
 			}
 
 			return this.$route.query.amount;
 		},
+		addressIsValid() {
+			return addressIsValid(this.address);
+		},
+		amountIsValid() {
+			return this.amount === undefined ? true : amountIsValid(this.amount);
+		},
 		deepLink() {
-			let deepLink = `nano:${this.address}`;
-
-			if (this.amount) {
-				deepLink += `?amount=${megaToRaw(this.amount)}`;
-			}
-
-			return deepLink;
+			const rawAmount = this.amount === undefined ? undefined : megaToRaw(this.amount);
+			return getSendURI(this.address, rawAmount);
 		},
 	},
 };

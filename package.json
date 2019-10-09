@@ -16,7 +16,7 @@
     "lodash.upperfirst": "^4.3.1",
     "nano-address-validator": "^3.0.0",
     "nano-unit-converter": "^2.0.0",
-    "nano-uri-generator": "^1.0.0",
+    "nano-uri-generator": "^2.0.1",
     "qrcode": "^1.4.2",
     "vue": "^2.6.6",
     "vue-notification": "^1.3.16",

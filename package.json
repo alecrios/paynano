@@ -9,30 +9,30 @@
   },
   "dependencies": {
     "bignumber.js": "^8.1.1",
-    "copy-to-clipboard": "^3.1.0",
-    "core-js": "^2.6.5",
+    "copy-to-clipboard": "^3.2.0",
+    "core-js": "^2.6.9",
     "core-reset": "^4.0.0",
     "focus-visible": "^4.1.5",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
-    "nano-address-validator": "^2.0.0",
+    "nano-address-validator": "^3.0.0",
     "nano-unit-converter": "^1.0.1",
     "nano-uri-generator": "^1.0.0",
-    "qrcode": "^1.3.3",
+    "qrcode": "^1.4.2",
     "vue": "^2.6.6",
     "vue-notification": "^1.3.16",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.1.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.6.0",
-    "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
-    "@vue/eslint-config-airbnb": "^4.0.0",
-    "babel-eslint": "^10.0.1",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-airbnb": "^4.0.1",
+    "babel-eslint": "^10.0.3",
     "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
     "vue-template-compiler": "^2.5.21"
   }
 }

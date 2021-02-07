@@ -5,13 +5,15 @@
 			class="link"
 			target="_blank"
 			rel="noopener"
-			v-text="'About Nano'"
+			v-text="'Nano.org'"
 		/>
 
-		<RouterLink
-			:to="donateLink"
+		<a
+			href="https://github.com/alecrios/pay-nano"
 			class="link"
-			v-text="'Donate'"
+			target="_blank"
+			rel="noopener"
+			v-text="'Source'"
 		/>
 
 		<a
@@ -19,7 +21,13 @@
 			class="link"
 			target="_blank"
 			rel="noopener"
-			v-text="'Send feedback'"
+			v-text="'Feedback'"
+		/>
+
+		<RouterLink
+			:to="donateLink"
+			class="link"
+			v-text="'Donate'"
 		/>
 	</footer>
 </template>
@@ -41,7 +49,6 @@ export default {
 .footer {
 	display: flex;
 	justify-content: center;
-	max-width: 17rem;
 	margin: 0 auto;
 	margin-top: 1rem;
 

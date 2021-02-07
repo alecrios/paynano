@@ -1,5 +1,5 @@
 <template>
-	<div class="home">
+	<div>
 		<BaseContainer class="container">
 			<form @submit.prevent="submit">
 				<div class="field">
@@ -66,7 +66,7 @@ import amountIsValid from '@/utils/amountIsValid';
 import CONSTANTS from '@/constants';
 
 export default {
-	name: 'Home',
+	name: 'HomeView',
 	data() {
 		return {
 			donateLink: `/${CONSTANTS.DONATE_ADDRESS}`,
@@ -82,7 +82,7 @@ export default {
 			}
 
 			const route = {
-				name: 'Landing',
+				name: 'PaymentView',
 				params: {
 					address: this.address,
 					showSuccessMessage: true,

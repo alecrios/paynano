@@ -1,5 +1,5 @@
 <template>
-	<div class="landing">
+	<div>
 		<BaseContainer
 			v-if="showSuccessMessage"
 			width="wide"
@@ -27,7 +27,7 @@
 			</div>
 		</BaseContainer>
 
-		<BaseContainer class="payment">
+		<BaseContainer>
 			<LandingInvalid v-if="!addressIsValid || !amountIsValid"/>
 
 			<div class="sections" v-if="addressIsValid && amountIsValid">
@@ -53,7 +53,7 @@ import LandingOpenButton from '@/components/LandingOpenButton.vue';
 import amountIsValid from '@/utils/amountIsValid';
 
 export default {
-	name: 'Landing',
+	name: 'PaymentView',
 	components: {
 		LandingInvalid,
 		LandingAddress,
@@ -131,9 +131,7 @@ export default {
 	}
 }
 
-.payment {
-	.sections > * + * {
-		border-top: .125rem dashed $color-gray;
-	}
+.sections > * + * {
+	border-top: .125rem dashed $color-gray;
 }
 </style>

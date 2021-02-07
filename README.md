@@ -1,4 +1,4 @@
-# My Nano Link
+# Pay Nano
 
 ## Development
 

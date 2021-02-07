@@ -1,12 +1,5 @@
 <template>
 	<footer class="footer">
-		<RouterLink
-			v-if="$route.path !== '/'"
-			to="/"
-			class="link"
-			v-text="'Create Link'"
-		/>
-
 		<a
 			href="https://nano.org/"
 			class="link"
@@ -15,12 +8,18 @@
 			v-text="'About Nano'"
 		/>
 
+		<RouterLink
+			:to="donateLink"
+			class="link"
+			v-text="'Donate'"
+		/>
+
 		<a
-			:href="donateLink"
+			href="https://alecrios.com/contact/"
 			class="link"
 			target="_blank"
 			rel="noopener"
-			v-text="'Donate'"
+			v-text="'Send feedback'"
 		/>
 	</footer>
 </template>
@@ -32,7 +31,7 @@ export default {
 	name: 'TheFooter',
 	data() {
 		return {
-			donateLink: CONSTANTS.DONATE_LINK,
+			donateLink: `/${CONSTANTS.DONATE_ADDRESS}`,
 		};
 	},
 };
@@ -46,7 +45,7 @@ export default {
 
 	.link {
 		font-size: .75rem;
-		line-height: 1.125rem;
+		line-height: 1.25rem;
 		font-weight: 500;
 		color: $color-text-lighter;
 

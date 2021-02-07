@@ -48,15 +48,13 @@
 			<h2>How does it work?</h2>
 
 			<p>
-				Simply complete the form, then hand out the link to request Nano. Users will be able
-				to pay via QR code, deep link, or copy/paste. See an example
-					<a
-						:href="donateLink"
-						class="link"
-						target="_blank"
-						rel="noopener"
-						v-text="'Nano link'"
-					/>.
+				To request a Nano payment, fill out the form above, then hand out the link to the
+				resulting page where users can pay via QR code, deep link, or copy/paste. See an
+				<RouterLink
+					:to="donateLink"
+					class="link"
+					v-text="'example link'"
+				/>.
 			</p>
 		</div>
 	</div>
@@ -72,7 +70,7 @@ export default {
 	name: 'Home',
 	data() {
 		return {
-			donateLink: CONSTANTS.DONATE_LINK,
+			donateLink: `/${CONSTANTS.DONATE_ADDRESS}`,
 			address: '',
 			amount: '',
 		};

@@ -1,32 +1,26 @@
 <template>
-	<div
-		class="landing-address"
-	>
-		<span
-			class="address"
-			v-text="address"
-			title="Click to copy"
-			@click="copy"
-		/>
+	<div class="landing-address">
+		<div class="heading">
+			<span class="label" v-text="'Address'"/>
+			<CopyButton :text="address" name="address"/>
+		</div>
+
+		<div class="address" v-text="address"/>
 	</div>
 </template>
 
 <script>
-import copy from 'copy-to-clipboard';
+import CopyButton from '@/components/CopyButton.vue';
 
 export default {
 	name: 'LandingAddress',
+	components: {
+		CopyButton,
+	},
 	props: {
 		address: {
 			type: String,
 			required: true,
-		},
-	},
-	methods: {
-		copy() {
-			copy(this.address)
-				? this.$notify({type: 'success', text: 'Copied address to clipboard'})
-				: this.$notify({type: 'error', text: 'Failed to copy address to clipboard'});
 		},
 	},
 };
@@ -36,18 +30,25 @@ export default {
 .landing-address {
 	padding: 1rem 1.5rem;
 
-	.address {
-		@include font-stack-monospace;
-		word-break: break-all;
-		font-weight: 700;
+	.heading {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.label {
 		font-size: 1rem;
 		line-height: 1.5rem;
+		font-weight: 700;
 		color: $color-text;
-		cursor: pointer;
+	}
 
-		&:hover {
-			text-decoration: underline;
-		}
+	.address {
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.25rem;
+		color: $color-text;
+		margin-top: .75rem;
+		word-break: break-all;
 	}
 }
 </style>

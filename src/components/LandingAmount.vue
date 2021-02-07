@@ -1,34 +1,26 @@
 <template>
-	<div
-		class="landing-amount"
-	>
-		<div class="label">Amount:</div>
+	<div class="landing-amount">
+		<div class="heading">
+			<span class="label" v-text="'Amount'"/>
+			<CopyButton :text="amount" name="amount"/>
+		</div>
 
-		<div
-			class="amount"
-			v-text="`${amount} NANO`"
-			title="Click to copy"
-			@click="copy"
-		/>
+		<div class="amount" v-text="`${amount} NANO`"/>
 	</div>
 </template>
 
 <script>
-import copy from 'copy-to-clipboard';
+import CopyButton from '@/components/CopyButton.vue';
 
 export default {
 	name: 'LandingAmount',
+	components: {
+		CopyButton,
+	},
 	props: {
 		amount: {
 			type: String,
 			required: true,
-		},
-	},
-	methods: {
-		copy() {
-			copy(this.amount)
-				? this.$notify({type: 'success', text: 'Copied amount to clipboard'})
-				: this.$notify({type: 'error', text: 'Failed to copy amount to clipboard'});
 		},
 	},
 };
@@ -36,22 +28,27 @@ export default {
 
 <style lang="scss" scoped>
 .landing-amount {
-	@include font-stack-monospace;
-	display: flex;
-	justify-content: space-between;
-	font-size: 1rem;
-	line-height: 1.5rem;
-	font-weight: 700;
-	color: $color-text;
 	padding: 1rem 1.5rem;
 
-	.amount {
-		text-align: right;
-		cursor: pointer;
+	.heading {
+		display: flex;
+		justify-content: space-between;
+	}
 
-		&:hover {
-			text-decoration: underline;
-		}
+	.label {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 700;
+		color: $color-text;
+	}
+
+	.amount {
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.25rem;
+		color: $color-text;
+		margin-top: .75rem;
+		word-break: break-all;
 	}
 }
 </style>

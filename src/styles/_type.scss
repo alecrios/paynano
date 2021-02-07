@@ -2,10 +2,6 @@
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, sans-serif;
 }
 
-@mixin font-stack-monospace() {
-	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-}
-
 @mixin button() {
 	display: block;
 	text-align: center;
@@ -26,7 +22,6 @@
 }
 
 @mixin input() {
-	@include font-stack-monospace;
 	width: 100%;
 	padding: .75rem 1rem;
 	background-color: $color-base;

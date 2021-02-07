@@ -13,7 +13,6 @@ export default {
 <style lang="scss">
 .container {
 	border-radius: .5rem;
-	overflow: hidden;
 	background-color: $color-base;
 	box-shadow: $box-shadow-large;
 }

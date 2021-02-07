@@ -41,7 +41,7 @@ export default {
 .footer {
 	display: flex;
 	justify-content: center;
-	margin-top: 1.5rem;
+	margin-top: 1rem;
 
 	.link {
 		font-size: .75rem;

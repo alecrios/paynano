@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
 .notifications {
 	pointer-events: none;
-	margin-top: 3.25rem;
+	margin-top: 2.5rem;
 }
 
 .notification {

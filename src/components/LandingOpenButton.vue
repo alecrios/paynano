@@ -6,7 +6,7 @@
 			:href="deepLink"
 		/>
 
-		<div class="note">* Not supported by all wallets</div>
+		<div class="note">May not be supported by all wallets</div>
 	</div>
 </template>
 

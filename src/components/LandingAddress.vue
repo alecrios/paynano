@@ -24,8 +24,9 @@ export default {
 	},
 	methods: {
 		copy() {
-			copy(this.address);
-			this.$notify({type: 'success', text: 'Copied address to clipboard'});
+			copy(this.address)
+				? this.$notify({type: 'success', text: 'Copied address to clipboard'})
+				: this.$notify({type: 'error', text: 'Failed to copy address to clipboard'});
 		},
 	},
 };

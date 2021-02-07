@@ -26,8 +26,9 @@ export default {
 	},
 	methods: {
 		copy() {
-			copy(this.amount);
-			this.$notify({type: 'success', text: 'Copied amount to clipboard'});
+			copy(this.amount)
+				? this.$notify({type: 'success', text: 'Copied amount to clipboard'})
+				: this.$notify({type: 'error', text: 'Failed to copy amount to clipboard'});
 		},
 	},
 };

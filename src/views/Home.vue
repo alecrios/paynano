@@ -94,8 +94,12 @@ export default {
 			}
 
 			this.$router.push(route);
-			copy(`${window.location.origin}${route}`);
-			this.$notify({type: 'success', text: 'Copied link to clipboard'});
+
+			const link = `${window.location.origin}${route}`;
+
+			copy(link)
+				? this.$notify({type: 'success', text: 'Copied link to clipboard'})
+				: this.$notify({type: 'error', text: 'Failed to copy link to clipboard'});
 		},
 	},
 };

@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="copy-button"
-		:title="`Copy ${name}`"
+		:title="`Copy ${lowercaseName}`"
 		@click="copy"
 		v-text="'Copy'"
 	/>
@@ -22,11 +22,22 @@ export default {
 			required: true,
 		},
 	},
+	computed: {
+		lowercaseName() {
+			return this.name.toLowerCase();
+		},
+	},
 	methods: {
 		copy() {
 			copy(this.text)
-				? this.$notify({type: 'success', text: `Copied ${this.name} to clipboard`})
-				: this.$notify({type: 'error', text: `Failed to copy ${this.name} to clipboard`});
+				? this.$notify({
+					type: 'success',
+					text: `Copied ${this.lowercaseName} to clipboard`,
+				})
+				: this.$notify({
+					type: 'error',
+					text: `Failed to copy ${this.lowercaseName} to clipboard`,
+				});
 		},
 	},
 };

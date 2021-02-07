@@ -12,8 +12,8 @@
 
 			<div class="sections" v-if="addressIsValid && amountIsValid">
 				<QRDisplay :address="address" :deep-link="deepLink"/>
-				<AddressDisplay :address="address"/>
-				<AmountDisplay v-if="amount" :amount="amount"/>
+				<ValueDisplay type="address" :value="address"/>
+				<ValueDisplay type="amount" :value="amount" v-if="amount"/>
 				<OpenInWalletButton :deep-link="deepLink"/>
 			</div>
 		</BaseContainer>
@@ -27,8 +27,7 @@ import addressIsValid from 'nano-address-validator';
 import {megaToRaw} from 'nano-unit-converter';
 import {getSendURI} from 'nano-uri-generator';
 import InvalidRequest from '@/components/InvalidRequest.vue';
-import AddressDisplay from '@/components/AddressDisplay.vue';
-import AmountDisplay from '@/components/AmountDisplay.vue';
+import ValueDisplay from '@/components/ValueDisplay.vue';
 import QRDisplay from '@/components/QRDisplay.vue';
 import OpenInWalletButton from '@/components/OpenInWalletButton.vue';
 import SuccessMessage from '@/components/SuccessMessage.vue';
@@ -39,8 +38,7 @@ export default {
 	name: 'PaymentView',
 	components: {
 		InvalidRequest,
-		AddressDisplay,
-		AmountDisplay,
+		ValueDisplay,
 		QRDisplay,
 		OpenInWalletButton,
 		SuccessMessage,

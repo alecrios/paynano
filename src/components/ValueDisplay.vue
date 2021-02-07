@@ -1,33 +1,49 @@
 <template>
-	<div class="address-display">
+	<div class="value-display">
 		<div class="heading">
-			<span class="label" v-text="'Address'"/>
-			<CopyButton :text="address" name="address"/>
+			<span class="label" v-text="valueName"/>
+			<CopyButton :text="value" :name="valueName"/>
 		</div>
 
-		<div class="address" v-text="address"/>
+		<div class="value" v-text="valueText"/>
 	</div>
 </template>
 
 <script>
 import CopyButton from '@/components/CopyButton.vue';
 
+const VALUE_NAMES = {
+	address: 'Address',
+	amount: 'Amount',
+};
+
 export default {
-	name: 'AddressDisplay',
+	name: 'ValueDisplay',
 	components: {
 		CopyButton,
 	},
 	props: {
-		address: {
+		type: {
+			validator: (value) => Object.keys(VALUE_NAMES).includes(value),
+		},
+		value: {
 			type: String,
 			required: true,
+		},
+	},
+	computed: {
+		valueName() {
+			return VALUE_NAMES[this.type];
+		},
+		valueText() {
+			return this.type === 'amount' ? `${this.value} NANO` : this.value;
 		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-.address-display {
+.value-display {
 	padding: 1rem 1.5rem;
 
 	.heading {
@@ -42,7 +58,7 @@ export default {
 		color: $color-stone;
 	}
 
-	.address {
+	.value {
 		font-weight: 600;
 		font-size: 1rem;
 		line-height: 1.25rem;

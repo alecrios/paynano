@@ -1,9 +1,8 @@
 <template>
 	<div id="app">
+		<TheHeader/>
 		<RouterView/>
-
 		<TheFooter/>
-
 		<TheNotifications/>
 	</div>
 </template>
@@ -11,12 +10,14 @@
 <script>
 import 'core-reset/core-reset.css';
 import 'focus-visible';
+import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
 import TheNotifications from '@/components/TheNotifications.vue';
 
 export default {
 	name: 'App',
 	components: {
+		TheHeader,
 		TheFooter,
 		TheNotifications,
 	},
@@ -25,13 +26,8 @@ export default {
 
 <style lang="scss">
 #app {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
 	max-width: 20rem;
 	margin: 0 auto;
-	padding: 3rem 1.5rem;
+	padding: 1.5rem;
 }
 </style>

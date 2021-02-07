@@ -17,11 +17,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.notifications {
-	pointer-events: none;
-	margin-top: 2.5rem;
-}
-
 .notification {
 	margin-top: .75rem;
 	display: flex;

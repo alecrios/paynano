@@ -1,5 +1,5 @@
 <template>
-	<div class="qr-code">
+	<div class="qr-display">
 		<img
 			v-if="png"
 			:src="png"
@@ -14,7 +14,7 @@
 import QRCode from 'qrcode';
 
 export default {
-	name: 'LandingQRCode',
+	name: 'QRDisplay',
 	props: {
 		address: {
 			type: String,
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.qr-code {
+.qr-display {
 	width: 17rem;
 	height: 17rem;
 	display: flex;

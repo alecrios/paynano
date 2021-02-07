@@ -1,5 +1,5 @@
 <template>
-	<div class="landing-invalid">
+	<div class="invalid-request">
 		<p>
 			Sorry, this URL does not contain a valid payment request.
 			Either the address or the amount is invalid.
@@ -9,12 +9,12 @@
 
 <script>
 export default {
-	name: 'LandingInvalid',
+	name: 'InvalidRequest',
 };
 </script>
 
 <style lang="scss" scoped>
-.landing-invalid {
+.invalid-request {
 	padding: 1.5rem;
 	text-align: center;
 	font-size: 1rem;

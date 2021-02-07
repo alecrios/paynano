@@ -1,11 +1,11 @@
 <template>
-	<div class="landing-address">
+	<div class="amount-display">
 		<div class="heading">
-			<span class="label" v-text="'Address'"/>
-			<CopyButton :text="address" name="address"/>
+			<span class="label" v-text="'Amount'"/>
+			<CopyButton :text="amount" name="amount"/>
 		</div>
 
-		<div class="address" v-text="address"/>
+		<div class="amount" v-text="`${amount} NANO`"/>
 	</div>
 </template>
 
@@ -13,12 +13,12 @@
 import CopyButton from '@/components/CopyButton.vue';
 
 export default {
-	name: 'LandingAddress',
+	name: 'AmountDisplay',
 	components: {
 		CopyButton,
 	},
 	props: {
-		address: {
+		amount: {
 			type: String,
 			required: true,
 		},
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.landing-address {
+.amount-display {
 	padding: 1rem 1.5rem;
 
 	.heading {
@@ -42,7 +42,7 @@ export default {
 		color: $color-text;
 	}
 
-	.address {
+	.amount {
 		font-weight: 500;
 		font-size: 1rem;
 		line-height: 1.25rem;

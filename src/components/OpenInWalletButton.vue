@@ -1,5 +1,5 @@
 <template>
-	<div class="landing-open-button">
+	<div class="open-in-wallet-button">
 		<BaseButton
 			text="Open in wallet"
 			:href="deepLink"
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	name: 'LandingOpenButton',
+	name: 'OpenInWalletButton',
 	props: {
 		deepLink: {
 			type: String,
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.landing-open-button {
+.open-in-wallet-button {
 	padding: 1.5rem;
 }
 </style>

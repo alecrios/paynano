@@ -14,6 +14,10 @@ body::before {
 	background-color: $color-primary;
 }
 
+::selection {
+	background-color: hsla(215, 100%, 45%, .5);
+}
+
 ::-moz-focus-inner {
 	border: 0;
 }

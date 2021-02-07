@@ -1,5 +1,13 @@
 <template>
-	<div v-html="svg"/>
+	<div class="qr-code">
+		<img
+			v-if="png"
+			:src="png"
+			alt="QR Code"
+			width="224"
+			height="224"
+		>
+	</div>
 </template>
 
 <script>
@@ -19,15 +27,25 @@ export default {
 	},
 	data() {
 		return {
-			svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"></svg>',
+			png: '',
 		};
 	},
 	async created() {
-		this.svg = await QRCode.toString(this.deepLink, {type: 'svg'});
+		this.png = await QRCode.toDataURL(this.deepLink, {
+			type: 'png',
+			width: 224,
+			margin: 0,
+		});
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-
+.qr-code {
+	width: 17rem;
+	height: 17rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 </style>

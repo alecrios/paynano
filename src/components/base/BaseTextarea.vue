@@ -1,25 +1,20 @@
 <template>
-	<input
-		class="input"
+	<textarea
+		class="textarea"
 		:id="id"
-		:type="type"
 		:placeholder="placeholder"
 		:value="value"
 		@input="$emit('input', $event.target.value)"
-	>
+	/>
 </template>
 
 <script>
 export default {
-	name: 'BaseInput',
+	name: 'BaseTextarea',
 	props: {
 		id: {
 			type: String,
 			required: true,
-		},
-		type: {
-			type: String,
-			default: 'text',
 		},
 		placeholder: {
 			type: String,
@@ -34,8 +29,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.input {
+.textarea {
 	width: 100%;
+	height: 7.5rem;
+	resize: none;
 	padding: .75rem 1rem;
 	background-color: $color-pearl;
 	border-radius: .25rem;

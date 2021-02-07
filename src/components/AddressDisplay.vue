@@ -43,7 +43,7 @@ export default {
 	}
 
 	.address {
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 1rem;
 		line-height: 1.25rem;
 		color: $color-stone;

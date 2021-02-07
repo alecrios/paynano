@@ -8,9 +8,8 @@
 						text="Nano Address"
 					/>
 
-					<BaseInput
+					<BaseTextarea
 						id="address"
-						type="text"
 						placeholder="nano_"
 						spellcheck="false"
 						v-model.trim="address"

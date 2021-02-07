@@ -5,8 +5,6 @@
 			v-text="'Open in Wallet'"
 			:href="deepLink"
 		/>
-
-		<div class="note">May not be supported by all wallets</div>
 	</div>
 </template>
 
@@ -28,15 +26,6 @@ export default {
 
 	.button {
 		@include button;
-	}
-
-	.note {
-		margin-top: .5rem;
-		text-align: center;
-		font-size: .75rem;
-		line-height: .75rem;
-		font-style: italic;
-		color: $color-text-lighter;
 	}
 }
 </style>

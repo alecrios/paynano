@@ -1,19 +1,28 @@
-$color-base: hsl(0, 0%, 100%);
-$color-gray: hsl(0, 0%, 94%);
-$color-text: hsl(0, 0%, 25%);
-$color-text-lighter: hsl(0, 0%, 35%);
-$color-primary: hsl(215, 100%, 45%);
-$color-primary-hover: hsl(215, 100%, 50%);
-$color-secondary: hsl(220, 10%, 45%);
-$color-secondary-hover: hsl(220, 10%, 50%);
-$color-success: hsl(120, 100%, 30%);
-$color-error: hsl(0, 100%, 30%);
-$color-yellow: hsl(50, 100%, 75%);
-$color-yellow-hover: hsl(50, 100%, 80%);
+$color-pearl: hsl(0, 0%, 100%);
+
+$color-quartz: hsl(0, 0%, 94%);
+
+$color-stone: hsl(0, 0%, 25%);
+$color-stone-lighter: hsl(0, 0%, 35%);
+
+$color-sapphire: hsl(215, 100%, 45%);
+$color-sapphire-transparent: hsla(215, 100%, 45%, .5);
+$color-sapphire-hover: hsl(215, 100%, 50%);
+
+$color-dolphin: hsl(220, 10%, 45%);
+$color-dolphin-hover: hsl(220, 10%, 50%);
+
+$color-emerald: hsl(120, 100%, 30%);
+
+$color-ruby: hsl(0, 100%, 30%);
+
+$color-champagne: hsl(50, 100%, 75%);
+$color-champagne-hover: hsl(50, 100%, 80%);
+
 $color-orange: hsl(30, 100%, 30%);
 $color-orange-hover: hsl(30, 100%, 35%);
 
-$box-shadow-focus: 0 0 0 .1875rem hsla(215, 100%, 45%, .5);
+$box-shadow-focus: 0 0 0 .1875rem $color-sapphire-transparent;
 $box-shadow-large:
 	0 1rem 1rem -1rem hsla(215, 12.5%, 12.5%, .125),
 	0 1rem 2rem 0 hsla(215, 0%, 25%, .0625);

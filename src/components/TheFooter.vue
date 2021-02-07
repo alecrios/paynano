@@ -49,7 +49,7 @@ export default {
 		font-size: .75rem;
 		line-height: 1.25rem;
 		font-weight: 500;
-		color: $color-text-lighter;
+		color: $color-stone-lighter;
 
 		&:hover {
 			text-decoration: underline;

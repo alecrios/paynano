@@ -37,12 +37,12 @@ export default {
 .input {
 	width: 100%;
 	padding: .75rem 1rem;
-	background-color: $color-base;
+	background-color: $color-pearl;
 	border-radius: .25rem;
-	background-color: $color-gray;
+	background-color: $color-quartz;
 	font-weight: 700;
 	font-size: 1rem;
 	line-height: 1.5rem;
-	color: $color-text;
+	color: $color-stone;
 }
 </style>

@@ -82,6 +82,6 @@ export default {
 
 <style lang="scss" scoped>
 .sections > * + * {
-	border-top: .125rem dashed $color-gray;
+	border-top: .125rem dashed $color-quartz;
 }
 </style>

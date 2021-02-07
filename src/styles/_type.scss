@@ -2,14 +2,14 @@ h2 {
 	font-size: 1rem;
 	line-height: 1.5rem;
 	font-weight: 700;
-	color: $color-text;
+	color: $color-stone;
 }
 
 p {
 	font-size: .875rem;
 	line-height: 1.5rem;
 	font-weight: 500;
-	color: $color-text;
+	color: $color-stone;
 }
 
 h2 + p {
@@ -17,6 +17,6 @@ h2 + p {
 }
 
 p > a {
-	color: $color-primary;
+	color: $color-sapphire;
 	text-decoration: underline;
 }

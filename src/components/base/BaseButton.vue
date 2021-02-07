@@ -63,20 +63,20 @@ export default {
 	}
 
 	&.primary {
-		background-color: $color-primary;
-		color: $color-base;
+		background-color: $color-sapphire;
+		color: $color-pearl;
 
 		&:hover {
-			background-color: $color-primary-hover;
+			background-color: $color-sapphire-hover;
 		}
 	}
 
 	&.secondary {
-		background-color: $color-secondary;
-		color: $color-base;
+		background-color: $color-dolphin;
+		color: $color-pearl;
 
 		&:hover {
-			background-color: $color-secondary-hover;
+			background-color: $color-dolphin-hover;
 		}
 	}
 }

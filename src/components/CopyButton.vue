@@ -39,14 +39,14 @@ export default {
 	text-transform: uppercase;
 	letter-spacing: .0625rem;
 	font-weight: 700;
-	background-color: $color-yellow;
+	background-color: $color-champagne;
 	color: $color-orange;
 	border-radius: .25rem;
 	padding: .125rem .5rem;
 	cursor: pointer;
 
 	&:hover {
-		background-color: $color-yellow-hover;
+		background-color: $color-champagne-hover;
 		color: $color-orange-hover;
 	}
 }

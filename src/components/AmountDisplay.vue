@@ -39,14 +39,14 @@ export default {
 		font-size: 1rem;
 		line-height: 1.5rem;
 		font-weight: 700;
-		color: $color-text;
+		color: $color-stone;
 	}
 
 	.amount {
 		font-weight: 500;
 		font-size: 1rem;
 		line-height: 1.25rem;
-		color: $color-text;
+		color: $color-stone;
 		margin-top: .75rem;
 		word-break: break-all;
 	}

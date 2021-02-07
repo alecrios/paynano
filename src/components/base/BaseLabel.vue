@@ -34,11 +34,11 @@ export default {
 	font-size: .875rem;
 	line-height: .875rem;
 	font-weight: 700;
-	color: $color-text;
+	color: $color-stone;
 	margin-bottom: .5rem;
 
 	> .note {
-		color: $color-text-lighter;
+		color: $color-stone-lighter;
 		font-size: .75rem;
 		font-weight: 500;
 		margin-left: .5rem;

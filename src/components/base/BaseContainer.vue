@@ -21,7 +21,7 @@ export default {
 	max-width: 17rem;
 	margin: 0 auto;
 	border-radius: .5rem;
-	background-color: $color-base;
+	background-color: $color-pearl;
 	box-shadow: $box-shadow-large;
 
 	&.wide {

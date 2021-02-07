@@ -33,16 +33,16 @@ export default {
 	font-size: .75rem;
 	line-height: 1rem;
 	font-weight: 500;
-	color: $color-base;
+	color: $color-pearl;
 	padding: .5rem .75rem;
 	border-radius: .25rem;
 }
 
 .message.error {
-	background-color: $color-error;
+	background-color: $color-ruby;
 }
 
 .message.success {
-	background-color: $color-success;
+	background-color: $color-emerald;
 }
 </style>

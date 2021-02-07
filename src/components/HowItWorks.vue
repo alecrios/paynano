@@ -15,8 +15,15 @@
 </template>
 
 <script>
+import CONSTANTS from '@/constants';
+
 export default {
 	name: 'HowItWorks',
+	data() {
+		return {
+			donateLink: `/${CONSTANTS.DONATE_ADDRESS}?amount=1`,
+		};
+	},
 };
 </script>
 

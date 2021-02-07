@@ -52,7 +52,6 @@
 <script>
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
-import CONSTANTS from '@/constants';
 import HowItWorks from '@/components/HowItWorks.vue';
 import TheFooter from '@/components/TheFooter.vue';
 
@@ -64,7 +63,6 @@ export default {
 	},
 	data() {
 		return {
-			donateLink: `/${CONSTANTS.DONATE_ADDRESS}?amount=1`,
 			address: '',
 			amount: '',
 		};

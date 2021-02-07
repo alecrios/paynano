@@ -41,6 +41,8 @@ export default {
 .footer {
 	display: flex;
 	justify-content: center;
+	max-width: 17rem;
+	margin: 0 auto;
 	margin-top: 1rem;
 
 	.link {

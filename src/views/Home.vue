@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import copy from 'copy-to-clipboard';
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
 import CONSTANTS from '@/constants';
@@ -82,7 +81,13 @@ export default {
 				return;
 			}
 
-			let route = `/${this.address}`;
+			const route = {
+				name: 'Landing',
+				params: {
+					address: this.address,
+					showSuccessMessage: true,
+				},
+			};
 
 			if (this.amount) {
 				if (!amountIsValid(this.amount)) {
@@ -90,16 +95,10 @@ export default {
 					return;
 				}
 
-				route += `?amount=${this.amount}`;
+				route.query = {amount: this.amount};
 			}
 
 			this.$router.push(route);
-
-			const link = `${window.location.origin}${route}`;
-
-			copy(link)
-				? this.$notify({type: 'success', text: 'Copied link to clipboard'})
-				: this.$notify({type: 'error', text: 'Failed to copy link to clipboard'});
 		},
 	},
 };
@@ -111,6 +110,8 @@ export default {
 	margin-top: 1.5rem;
 	padding: 1.5rem 0;
 	color: $color-text;
+	max-width: 17rem;
+	margin: 0 auto;
 
 	> * + * {
 		margin-top: .75rem;
@@ -126,10 +127,6 @@ export default {
 		font-size: .875rem;
 		line-height: 1.5rem;
 		font-weight: 500;
-	}
-
-	strong {
-		font-weight: 700;
 	}
 
 	a {

@@ -26,8 +26,6 @@ export default {
 
 <style lang="scss">
 #app {
-	max-width: 20rem;
-	margin: 0 auto;
 	padding: 1.5rem;
 }
 </style>

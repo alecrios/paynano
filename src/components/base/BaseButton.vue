@@ -1,7 +1,15 @@
 <template>
+	<a
+		v-if="href"
+		:class="['button', theme, size]"
+		v-text="text"
+		:href="href"
+	/>
+
 	<button
+		v-else
 		type="button"
-		:class="['button', theme]"
+		:class="['button', theme, size]"
 		v-text="text"
 		@click="$emit('click')"
 	/>
@@ -15,9 +23,17 @@ export default {
 			type: String,
 			required: true,
 		},
+		href: {
+			type: String,
+			default: '',
+		},
 		theme: {
 			type: String,
 			default: 'primary',
+		},
+		size: {
+			type: String,
+			default: 'regular',
 		},
 	},
 };
@@ -25,6 +41,43 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-	@include button;
+	display: block;
+	text-align: center;
+	width: 100%;
+	border-radius: .25rem;
+	cursor: pointer;
+	transition: background-color 125ms ease;
+
+	&.small {
+		font-size: .75rem;
+		line-height: 1rem;
+		font-weight: 600;
+		padding: .5rem .75rem;
+	}
+
+	&.regular {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 600;
+		padding: .75rem 1rem;
+	}
+
+	&.primary {
+		background-color: $color-primary;
+		color: $color-base;
+
+		&:hover {
+			background-color: $color-primary-hover;
+		}
+	}
+
+	&.secondary {
+		background-color: $color-secondary;
+		color: $color-base;
+
+		&:hover {
+			background-color: $color-secondary-hover;
+		}
+	}
 }
 </style>

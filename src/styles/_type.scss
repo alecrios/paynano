@@ -2,25 +2,6 @@
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, sans-serif;
 }
 
-@mixin button() {
-	display: block;
-	text-align: center;
-	font-size: 1rem;
-	line-height: 1.5rem;
-	font-weight: 600;
-	padding: .75rem 1rem;
-	width: 100%;
-	border-radius: .25rem;
-	background-color: $color-primary;
-	color: $color-base;
-	cursor: pointer;
-	transition: background-color 125ms ease;
-
-	&:hover {
-		background-color: $color-primary-hover;
-	}
-}
-
 @mixin input() {
 	width: 100%;
 	padding: .75rem 1rem;

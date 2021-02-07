@@ -37,6 +37,8 @@
 				<OpenInWalletButton :deep-link="deepLink"/>
 			</div>
 		</BaseContainer>
+
+		<TheFooter/>
 	</div>
 </template>
 
@@ -50,6 +52,7 @@ import AddressDisplay from '@/components/AddressDisplay.vue';
 import AmountDisplay from '@/components/AmountDisplay.vue';
 import QRDisplay from '@/components/QRDisplay.vue';
 import OpenInWalletButton from '@/components/OpenInWalletButton.vue';
+import TheFooter from '@/components/TheFooter.vue';
 import amountIsValid from '@/utils/amountIsValid';
 
 export default {
@@ -60,6 +63,7 @@ export default {
 		AmountDisplay,
 		QRDisplay,
 		OpenInWalletButton,
+		TheFooter,
 	},
 	data() {
 		return {

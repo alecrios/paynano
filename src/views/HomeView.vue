@@ -57,6 +57,8 @@
 				/>.
 			</p>
 		</div>
+
+		<TheFooter/>
 	</div>
 </template>
 
@@ -64,9 +66,13 @@
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
 import CONSTANTS from '@/constants';
+import TheFooter from '@/components/TheFooter.vue';
 
 export default {
 	name: 'HomeView',
+	components: {
+		TheFooter,
+	},
 	data() {
 		return {
 			donateLink: `/${CONSTANTS.DONATE_ADDRESS}`,

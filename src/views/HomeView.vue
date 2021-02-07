@@ -112,10 +112,10 @@ export default {
 <style lang="scss" scoped>
 .intro {
 	text-align: center;
-	margin-top: 1.5rem;
-	padding: 1.5rem 0;
 	max-width: 17rem;
 	margin: 0 auto;
+	margin-top: .75rem;
+	padding: 1.5rem 0;
 }
 
 .container {

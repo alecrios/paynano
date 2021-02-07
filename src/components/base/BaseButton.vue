@@ -43,7 +43,6 @@ export default {
 .button {
 	display: block;
 	text-align: center;
-	width: 100%;
 	border-radius: .25rem;
 	cursor: pointer;
 	transition: background-color 125ms ease;
@@ -60,6 +59,7 @@ export default {
 		line-height: 1.5rem;
 		font-weight: 600;
 		padding: .75rem 1rem;
+		width: 100%;
 	}
 
 	&.primary {
@@ -68,15 +68,6 @@ export default {
 
 		&:hover {
 			background-color: $color-sapphire-hover;
-		}
-	}
-
-	&.secondary {
-		background-color: $color-dolphin;
-		color: $color-pearl;
-
-		&:hover {
-			background-color: $color-dolphin-hover;
 		}
 	}
 }

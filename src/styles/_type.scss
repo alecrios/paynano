@@ -1,15 +1,22 @@
-@mixin font-stack-sans-serif() {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, sans-serif;
-}
-
-@mixin input() {
-	width: 100%;
-	padding: .75rem 1rem;
-	background-color: $color-base;
-	border-radius: .25rem;
-	background-color: $color-gray;
-	font-weight: 700;
+h2 {
 	font-size: 1rem;
 	line-height: 1.5rem;
+	font-weight: 700;
 	color: $color-text;
+}
+
+p {
+	font-size: .875rem;
+	line-height: 1.5rem;
+	font-weight: 500;
+	color: $color-text;
+}
+
+h2 + p {
+	margin-top: .75rem;
+}
+
+p > a {
+	color: $color-primary;
+	text-decoration: underline;
 }

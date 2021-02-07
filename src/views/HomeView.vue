@@ -115,30 +115,8 @@ export default {
 	text-align: center;
 	margin-top: 1.5rem;
 	padding: 1.5rem 0;
-	color: $color-text;
 	max-width: 17rem;
 	margin: 0 auto;
-
-	> * + * {
-		margin-top: .75rem;
-	}
-
-	h2 {
-		font-size: 1rem;
-		line-height: 1.5rem;
-		font-weight: 700;
-	}
-
-	p {
-		font-size: .875rem;
-		line-height: 1.5rem;
-		font-weight: 500;
-	}
-
-	a {
-		color: $color-primary;
-		text-decoration: underline;
-	}
 }
 
 .container {

@@ -46,20 +46,6 @@ export default {
 	margin-bottom: 1.5rem;
 	padding: 1.5rem;
 
-	h2 {
-		font-size: 1rem;
-		line-height: 1.5rem;
-		font-weight: 700;
-		text-align: center;
-		margin-bottom: .75rem;
-	}
-
-	p {
-		font-size: .875rem;
-		line-height: 1.5rem;
-		font-weight: 500;
-	}
-
 	.actions {
 		display: flex;
 		margin-top: 1.5rem;

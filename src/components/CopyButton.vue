@@ -34,7 +34,6 @@ export default {
 
 <style lang="scss" scoped>
 .copy-button {
-	@include font-stack-sans-serif;
 	font-size: .75rem;
 	line-height: 1rem;
 	text-transform: uppercase;

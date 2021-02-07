@@ -84,13 +84,4 @@ export default {
 .sections > * + * {
 	border-top: .125rem dashed $color-gray;
 }
-
-.fade-enter-active, .fade-leave-active {
-	transition: opacity 250ms;
-}
-
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
 </style>

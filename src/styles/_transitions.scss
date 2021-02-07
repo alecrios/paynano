@@ -1,0 +1,31 @@
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+	transition-duration: 250ms;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+	overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+	opacity: 0;
+	transform: translateX(1.5rem);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+	opacity: 0;
+	transform: translateX(-1.5rem);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 250ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}

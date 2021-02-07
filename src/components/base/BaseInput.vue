@@ -35,6 +35,14 @@ export default {
 
 <style lang="scss" scoped>
 .input {
-	@include input;
+	width: 100%;
+	padding: .75rem 1rem;
+	background-color: $color-base;
+	border-radius: .25rem;
+	background-color: $color-gray;
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: $color-text;
 }
 </style>

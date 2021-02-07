@@ -1,31 +1,33 @@
 <template>
 	<div>
-		<BaseContainer
-			v-if="showSuccessMessage"
-			width="wide"
-			class="success-message"
-		>
-			<div class="text">
-				<h2>Payment page created!</h2>
-				<p>This is your Nano payment page! Send the link to request Nano.</p>
-			</div>
+		<Transition name="fade">
+			<BaseContainer
+				v-if="showSuccessMessage"
+				width="wide"
+				class="success-message"
+			>
+				<div class="text">
+					<h2>Payment page created!</h2>
+					<p>This is your Nano payment page! Send the link to request Nano.</p>
+				</div>
 
-			<div class="actions">
-				<BaseButton
-					text="Copy link"
-					@click="copyLink"
-					theme="primary"
-					size="small"
-				/>
+				<div class="actions">
+					<BaseButton
+						text="Copy link"
+						@click="copyLink"
+						theme="primary"
+						size="small"
+					/>
 
-				<BaseButton
-					text="Dismiss"
-					@click="showSuccessMessage = false"
-					theme="secondary"
-					size="small"
-				/>
-			</div>
-		</BaseContainer>
+					<BaseButton
+						text="Dismiss"
+						@click="showSuccessMessage = false"
+						theme="secondary"
+						size="small"
+					/>
+				</div>
+			</BaseContainer>
+		</Transition>
 
 		<BaseContainer>
 			<InvalidRequest v-if="!addressIsValid || !amountIsValid"/>
@@ -137,5 +139,14 @@ export default {
 
 .sections > * + * {
 	border-top: .125rem dashed $color-gray;
+}
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity 250ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
 }
 </style>

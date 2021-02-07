@@ -74,7 +74,7 @@ export default {
 	},
 	data() {
 		return {
-			donateLink: `/${CONSTANTS.DONATE_ADDRESS}`,
+			donateLink: `/${CONSTANTS.DONATE_ADDRESS}?amount=1`,
 			address: '',
 			amount: '',
 		};

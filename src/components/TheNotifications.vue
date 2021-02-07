@@ -1,5 +1,5 @@
 <template>
-	<notifications position="top center" width="100%" :duration="2500">
+	<notifications position="top center" width="100%" :duration="3000">
 		<template slot="body" slot-scope="props">
 			<div class="notification">
 				<div :class="['message', props.item.type]">
@@ -19,10 +19,11 @@ export default {
 <style lang="scss" scoped>
 .notifications {
 	pointer-events: none;
+	margin-top: 3.25rem;
 }
 
 .notification {
-	margin-top: .5rem;
+	margin-top: .75rem;
 	display: flex;
 	justify-content: center;
 }

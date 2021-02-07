@@ -16,7 +16,7 @@
 		/>
 
 		<a
-			href="https://mynano.link/nano_3xk9wwjp89uod6gfwf775ctuibi4nybm4txi3gax3if1smun6hk57xxr6jnu"
+			:href="donateLink"
 			class="link"
 			target="_blank"
 			rel="noopener"
@@ -26,8 +26,15 @@
 </template>
 
 <script>
+import CONSTANTS from '@/constants';
+
 export default {
 	name: 'TheFooter',
+	data() {
+		return {
+			donateLink: CONSTANTS.DONATE_LINK,
+		};
+	},
 };
 </script>
 

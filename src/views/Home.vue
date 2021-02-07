@@ -51,7 +51,7 @@
 				Simply complete the form, then hand out the link to request Nano. Users will be able
 				to pay via QR code, deep link, or copy/paste. See an example
 					<a
-						href="https://mynano.link/nano_3xk9wwjp89uod6gfwf775ctuibi4nybm4txi3gax3if1smun6hk57xxr6jnu?amount=0.1"
+						:href="donateLink"
 						class="link"
 						target="_blank"
 						rel="noopener"
@@ -66,11 +66,13 @@
 import copy from 'copy-to-clipboard';
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
+import CONSTANTS from '@/constants';
 
 export default {
 	name: 'Home',
 	data() {
 		return {
+			donateLink: CONSTANTS.DONATE_LINK,
 			address: '',
 			amount: '',
 		};

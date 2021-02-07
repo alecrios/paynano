@@ -1,13 +1,13 @@
-$color-base: #ffffff;
-$color-gray: #efefef;
-$color-text: #3f3f3f;
-$color-text-lighter: #676767;
-$color-primary: #006Aff;
-$color-primary-hover: #1979FF;
-$color-success: #00A600;
-$color-error: #A60000;
+$color-base: hsl(0, 0%, 100%);
+$color-gray: hsl(0, 0%, 94%);
+$color-text: hsl(0, 0%, 25%);
+$color-text-lighter: hsl(0, 0%, 40%);
+$color-primary: hsl(215, 100%, 45%);
+$color-primary-hover: hsl(215, 100%, 50%);
+$color-success: hsl(120, 100%, 30%);
+$color-error: hsl(0, 100%, 30%);
 
-$box-shadow-focus: 0 0 0 .1875rem hsla(215, 100%, 50%, .5);
+$box-shadow-focus: 0 0 0 .1875rem hsla(215, 100%, 45%, .5);
 $box-shadow-large:
 	0 1rem 1rem -1rem hsla(215, 12.5%, 12.5%, .125),
 	0 1rem 2rem 0 hsla(215, 0%, 25%, .0625);

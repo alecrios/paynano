@@ -3,6 +3,17 @@ html {
 	background-color: $color-gray;
 }
 
+body::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 7.5rem;
+	top: 0;
+	left: 0;
+	background-color: $color-primary;
+}
+
 ::-moz-focus-inner {
 	border: 0;
 }

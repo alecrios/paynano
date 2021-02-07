@@ -43,19 +43,7 @@
 			</form>
 		</BaseContainer>
 
-		<div class="intro">
-			<h2>How does it work?</h2>
-
-			<p>
-				To request a Nano payment, fill out the form above, then hand out the link to the
-				resulting page where users can pay via QR code, deep link, or copy/paste. See an
-				<RouterLink
-					:to="donateLink"
-					class="link"
-					v-text="'example link'"
-				/>.
-			</p>
-		</div>
+		<HowItWorks/>
 
 		<TheFooter/>
 	</div>
@@ -65,11 +53,13 @@
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
 import CONSTANTS from '@/constants';
+import HowItWorks from '@/components/HowItWorks.vue';
 import TheFooter from '@/components/TheFooter.vue';
 
 export default {
 	name: 'HomeView',
 	components: {
+		HowItWorks,
 		TheFooter,
 	},
 	data() {
@@ -110,14 +100,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.intro {
-	text-align: center;
-	max-width: 17rem;
-	margin: 0 auto;
-	margin-top: .75rem;
-	padding: 1.5rem 0;
-}
-
 .container {
 	padding: 1.5rem;
 

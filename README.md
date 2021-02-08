@@ -1,4 +1,4 @@
-# Pay Nano
+# PayNano
 
 ## Development
 

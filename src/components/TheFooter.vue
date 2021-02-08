@@ -9,7 +9,7 @@
 		/>
 
 		<a
-			href="https://github.com/alecrios/pay-nano"
+			href="https://github.com/alecrios/paynano"
 			class="link"
 			target="_blank"
 			rel="noopener"

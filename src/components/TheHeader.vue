@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<RouterLink to="/">
-			<img class="logo" src="~@/assets/logo.svg" alt="Pay Nano" width="112" height="32">
+			<img class="logo" src="~@/assets/logo.svg" alt="PayNano" width="108" height="32">
 		</RouterLink>
 	</header>
 </template>

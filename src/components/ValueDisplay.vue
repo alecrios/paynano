@@ -5,7 +5,10 @@
 			<CopyButton :text="value" :name="valueName"/>
 		</div>
 
-		<div class="value" v-text="valueText"/>
+		<div class="value">
+			{{ value }}
+			<span v-if="type === 'amount'" class="unit" v-text="'NANO'"/>
+		</div>
 	</div>
 </template>
 
@@ -35,9 +38,6 @@ export default {
 		valueName() {
 			return VALUE_NAMES[this.type];
 		},
-		valueText() {
-			return this.type === 'amount' ? `${this.value} NANO` : this.value;
-		},
 	},
 };
 </script>
@@ -65,6 +65,12 @@ export default {
 		color: $color-stone;
 		margin-top: .75rem;
 		word-break: break-all;
+	}
+
+	.unit {
+		font-size: .75rem;
+		font-weight: 700;
+		letter-spacing: .015625rem;
 	}
 }
 </style>

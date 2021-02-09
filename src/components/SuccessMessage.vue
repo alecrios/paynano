@@ -1,8 +1,5 @@
 <template>
-	<BaseContainer
-		width="wide"
-		class="success-message"
-	>
+	<BaseContainer width="wide" class="success-message">
 		<div class="text">
 			<h2>Success!</h2>
 			<p>This is your Nano payment page!<br>Send the link to request Nano.</p>

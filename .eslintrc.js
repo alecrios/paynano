@@ -21,7 +21,7 @@ module.exports = {
 			'ObjectExpression': {'multiline': true, 'consistent': true},
 			'ObjectPattern': {'multiline': true, 'consistent': true},
 			'ImportDeclaration': {'multiline': true, 'consistent': true},
-			'ExportDeclaration': {'multiline': true, 'consistent': true}
+			'ExportDeclaration': {'multiline': true, 'consistent': true},
 		}],
 		'no-param-reassign': ['error', {
 			props: true,

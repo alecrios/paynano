@@ -5,11 +5,7 @@
 		<p>
 			To request a Nano payment, fill out the form above, then hand out the link to the
 			resulting page where users can pay via QR code, deep link, or copy/paste. See an
-			<RouterLink
-				:to="donateLink"
-				class="link"
-				v-text="'example link'"
-			/>.
+			<RouterLink :to="donateLink" v-text="'example link'"/>.
 		</p>
 	</div>
 </template>

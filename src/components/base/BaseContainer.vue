@@ -1,6 +1,6 @@
 <template>
 	<div :class="['container', width]">
-		<slot></slot>
+		<slot/>
 	</div>
 </template>
 

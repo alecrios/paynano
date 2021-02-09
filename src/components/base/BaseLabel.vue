@@ -1,8 +1,5 @@
 <template>
-	<label
-		class="label"
-		:for="inputId"
-	>
+	<label class="label" :for="inputId">
 		<span>{{ text }}</span>
 		<span class="note" v-if="note">({{ note }})</span>
 	</label>

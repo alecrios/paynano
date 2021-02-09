@@ -1,25 +1,17 @@
 # PayNano
 
-## Development
+PayNano is built with [Vue.js](https://vuejs.org/) and hosted on [Netlify](http://netlify.com/).
 
-### Set up project
-
-```
+``` sh
+# Set up project
 npm install
-```
 
-### Compile and hot-reload for development
+# Lint and fix files
+npm run lint
 
-```
+# Compile and hot-reload for development
 npm run serve
-```
 
-### Compile and minify for production
-
-```
+# Compile and minify for production
 npm run build
 ```
-
-## Deployment
-
-This project is configured with Netlify to automatically build and deploy when a change is pushed to the master branch.

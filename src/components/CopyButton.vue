@@ -48,7 +48,7 @@ export default {
 	font-size: .75rem;
 	line-height: 1rem;
 	text-transform: uppercase;
-	letter-spacing: .0625rem;
+	letter-spacing: .015625rem;
 	font-weight: 700;
 	background-color: $color-champagne;
 	color: $color-orange;

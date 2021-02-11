@@ -50,11 +50,11 @@ export default {
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 
 	.link {
 		font-size: .75rem;
-		line-height: 1.25rem;
+		line-height: 1rem;
 		font-weight: 500;
 		color: $color-stone-lighter;
 

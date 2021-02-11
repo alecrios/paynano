@@ -1,6 +1,16 @@
 <template>
 	<div>
-		<BaseContainer class="container">
+		<InlineModal :is-dismissable="false">
+			<h1>Request Nano</h1>
+
+			<p>
+				To request a payment or donation in Nano, fill out the form below, and a page link will be
+				generated. On this page, users can pay via QR code, deep link, or copy &amp; paste. Check
+				out an <RouterLink :to="donateLink" v-text="'example'"/>.
+			</p>
+		</InlineModal>
+
+		<BaseContainer class="form-container">
 			<form @submit.prevent="submit">
 				<div class="field">
 					<BaseLabel
@@ -43,8 +53,6 @@
 			</form>
 		</BaseContainer>
 
-		<HowItWorks/>
-
 		<TheFooter/>
 	</div>
 </template>
@@ -52,19 +60,21 @@
 <script>
 import addressIsValid from 'nano-address-validator';
 import amountIsValid from '@/utils/amountIsValid';
-import HowItWorks from '@/components/HowItWorks.vue';
+import InlineModal from '@/components/InlineModal.vue';
 import TheFooter from '@/components/TheFooter.vue';
+import CONSTANTS from '@/constants';
 
 export default {
 	name: 'HomeView',
 	components: {
-		HowItWorks,
+		InlineModal,
 		TheFooter,
 	},
 	data() {
 		return {
 			address: '',
 			amount: '',
+			donateLink: `/${CONSTANTS.DONATE_ADDRESS}?amount=1`,
 		};
 	},
 	methods: {
@@ -78,7 +88,7 @@ export default {
 				name: 'PaymentView',
 				params: {
 					address: this.address,
-					showSuccessMessage: true,
+					showSuccessModal: true,
 				},
 			};
 
@@ -98,7 +108,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.form-container {
+	margin-top: 1.5rem;
 	padding: 1.5rem;
 
 	.field + .field {

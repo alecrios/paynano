@@ -1,10 +1,16 @@
 <template>
 	<div>
 		<Transition name="fade">
-			<SuccessMessage
-				v-if="showSuccessMessage"
-				@hide="() => showSuccessMessage = false"
-			/>
+			<InlineModal
+				v-if="showSuccessModal"
+				@hide="() => showSuccessModal = false"
+				action-text="Copy link"
+				@action="copyLink"
+			>
+				<h1>Success!</h1>
+
+				<p>This is your Nano payment page!<br>Send the link to request Nano.</p>
+			</InlineModal>
 		</Transition>
 
 		<BaseContainer>
@@ -23,6 +29,7 @@
 </template>
 
 <script>
+import copy from 'copy-to-clipboard';
 import addressIsValid from 'nano-address-validator';
 import {megaToRaw} from 'nano-unit-converter';
 import {getSendURI} from 'nano-uri-generator';
@@ -30,7 +37,7 @@ import InvalidRequest from '@/components/InvalidRequest.vue';
 import ValueDisplay from '@/components/ValueDisplay.vue';
 import QRDisplay from '@/components/QRDisplay.vue';
 import OpenInWalletButton from '@/components/OpenInWalletButton.vue';
-import SuccessMessage from '@/components/SuccessMessage.vue';
+import InlineModal from '@/components/InlineModal.vue';
 import TheFooter from '@/components/TheFooter.vue';
 import amountIsValid from '@/utils/amountIsValid';
 
@@ -41,12 +48,12 @@ export default {
 		ValueDisplay,
 		QRDisplay,
 		OpenInWalletButton,
-		SuccessMessage,
+		InlineModal,
 		TheFooter,
 	},
 	data() {
 		return {
-			showSuccessMessage: this.$route.params.showSuccessMessage,
+			showSuccessModal: this.$route.params.showSuccessModal,
 		};
 	},
 	computed: {
@@ -73,6 +80,13 @@ export default {
 		deepLink() {
 			const rawAmount = this.amount === undefined ? undefined : megaToRaw(this.amount);
 			return getSendURI(this.address, rawAmount);
+		},
+	},
+	methods: {
+		copyLink() {
+			copy(window.location.href)
+				? this.$notify({type: 'success', text: 'Copied link to clipboard'})
+				: this.$notify({type: 'error', text: 'Failed to copy link to clipboard'});
 		},
 	},
 };

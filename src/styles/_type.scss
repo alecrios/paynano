@@ -1,5 +1,5 @@
-h2 {
-	font-size: 1rem;
+h1 {
+	font-size: 1.125rem;
 	line-height: 1.5rem;
 	font-weight: 700;
 	color: $color-stone;
@@ -12,7 +12,7 @@ p {
 	color: $color-stone;
 }
 
-h2 + p {
+h1 + p {
 	margin-top: .75rem;
 }
 

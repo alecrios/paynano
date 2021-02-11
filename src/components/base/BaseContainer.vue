@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss">
 .container {
+	position: relative;
 	max-width: 17rem;
 	margin: 0 auto;
 	border-radius: .5rem;

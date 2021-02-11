@@ -13,9 +13,21 @@
 			</InlineModal>
 		</Transition>
 
-		<BaseContainer>
-			<InvalidRequest v-if="!addressIsValid || !amountIsValid"/>
+		<InlineModal
+			v-if="!addressIsValid || !amountIsValid"
+			:is-dismissable="false"
+			action-text="Go home"
+			@action="goHome"
+		>
+			<h1>Invalid Payment Request</h1>
 
+			<p>
+				Sorry, this URL does not contain a valid payment request. Something must be wrong with the
+				address or the amount.
+			</p>
+		</InlineModal>
+
+		<BaseContainer>
 			<div class="sections" v-if="addressIsValid && amountIsValid">
 				<QRDisplay :address="address" :deep-link="deepLink"/>
 				<ValueDisplay type="address" :value="address"/>
@@ -33,7 +45,6 @@ import copy from 'copy-to-clipboard';
 import addressIsValid from 'nano-address-validator';
 import {megaToRaw} from 'nano-unit-converter';
 import {getSendURI} from 'nano-uri-generator';
-import InvalidRequest from '@/components/InvalidRequest.vue';
 import ValueDisplay from '@/components/ValueDisplay.vue';
 import QRDisplay from '@/components/QRDisplay.vue';
 import OpenInWalletButton from '@/components/OpenInWalletButton.vue';
@@ -44,7 +55,6 @@ import amountIsValid from '@/utils/amountIsValid';
 export default {
 	name: 'PaymentView',
 	components: {
-		InvalidRequest,
 		ValueDisplay,
 		QRDisplay,
 		OpenInWalletButton,
@@ -87,6 +97,9 @@ export default {
 			copy(window.location.href)
 				? this.$notify({type: 'success', text: 'Copied link to clipboard'})
 				: this.$notify({type: 'error', text: 'Failed to copy link to clipboard'});
+		},
+		goHome() {
+			this.$router.push({name: 'HomeView'});
 		},
 	},
 };

@@ -5,9 +5,16 @@
 			<CopyButton :text="value" :name="valueName"/>
 		</div>
 
-		<div class="value">
-			{{ value }}
-			<span v-if="type === 'amount'" class="unit" v-text="'NANO'"/>
+		<div v-if="type === 'address'" class="address-value" v-text="value"/>
+
+		<div v-if="type === 'amount'" class="amount-value">
+			<span class="nano-value">
+				{{ value }} <span class="unit" v-text="'NANO'"/>
+			</span>
+
+			<span v-if="fiatValue" class="fiat-value">
+				<span>(≈{{ fiatSymbol }}{{ fiatValue }} <span class="unit" v-text="fiatName"/>)</span>
+			</span>
 		</div>
 	</div>
 </template>
@@ -34,6 +41,13 @@ export default {
 			required: true,
 		},
 	},
+	data() {
+		return {
+			fiatSymbol: '',
+			fiatValue: 0,
+			fiatName: '',
+		};
+	},
 	computed: {
 		valueName() {
 			return VALUE_NAMES[this.type];
@@ -58,7 +72,7 @@ export default {
 		color: $color-stone;
 	}
 
-	.value {
+	.address-value {
 		font-weight: 600;
 		font-size: 1rem;
 		line-height: 1.25rem;
@@ -67,10 +81,35 @@ export default {
 		word-break: break-all;
 	}
 
-	.unit {
-		font-size: .75rem;
-		font-weight: 700;
-		letter-spacing: .015625rem;
+	.amount-value {
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1.25rem;
+		color: $color-stone;
+		margin-top: .75rem;
+	}
+
+	.nano-value {
+		display: inline-block;
+		margin-right: .75rem;
+
+		.unit {
+			font-size: .75rem;
+			font-weight: 700;
+			letter-spacing: .015625rem;
+		}
+	}
+
+	.fiat-value {
+		display: inline-block;
+		font-weight: 400;
+		color: $color-stone-lightest;
+
+		.unit {
+			font-size: .75rem;
+			font-weight: 500;
+			letter-spacing: .015625rem;
+		}
 	}
 }
 </style>

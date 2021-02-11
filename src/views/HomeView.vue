@@ -36,7 +36,7 @@
 
 				<div class="field">
 					<BaseButton
-						text="Get Link"
+						text="Get page link"
 						@click="submit"
 					/>
 				</div>

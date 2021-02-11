@@ -4,8 +4,8 @@
 			v-if="png"
 			:src="png"
 			alt="QR Code"
-			width="224"
-			height="224"
+			:width="size"
+			:height="size"
 		>
 	</div>
 </template>
@@ -27,13 +27,14 @@ export default {
 	},
 	data() {
 		return {
+			size: 224,
 			png: '',
 		};
 	},
 	async created() {
 		this.png = await QRCode.toDataURL(this.deepLink, {
 			type: 'png',
-			width: 224,
+			width: this.size,
 			margin: 0,
 		});
 	},

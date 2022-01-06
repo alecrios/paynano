@@ -28,6 +28,8 @@ export default {
 		};
 	},
 	created() {
+		this.$store.dispatch('updatePrice');
+
 		this.$router.beforeEach((to, from, next) => {
 			this.transitionName = to.name === 'HomeView' ? 'slide-right' : 'slide-left';
 			next();
